@@ -78,10 +78,12 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Comet") || other.CompareTag("Asteroid"))
+        if (other.CompareTag("Asteroid"))
         {
-            Debug.Log("¡Colisión con objeto peligroso!");
-            Destroy(gameObject); // Destruye la nave
+            Debug.Log("¡Colisión con asteroide!");
+            LivesManager.Instance?.LoseLife();
+            other.gameObject.SetActive(false);
+            // No destruimos al jugador, solo le restamos vida
         }
     }
 }

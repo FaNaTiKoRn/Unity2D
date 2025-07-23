@@ -69,4 +69,10 @@ public class AsteroidSpawner : MonoBehaviour
             Debug.LogWarning("No hay asteroides disponibles en la pool para el tipo " + tipoElegido);
         }
     }
+
+    public void IncreaseSpawnSpeed(float newRate)
+    {
+        spawnRate = newRate;
+    }
+
 }
