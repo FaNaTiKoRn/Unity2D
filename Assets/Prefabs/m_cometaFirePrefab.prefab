@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 2
+  impactSound: {fileID: 8300000, guid: bfda87f4ac3fbec4ca3111590e2d8f2d, type: 3}

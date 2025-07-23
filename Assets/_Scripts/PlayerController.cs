@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ShootProjectile();
+            SoundManager.Instance.PlaySound(SoundManager.Instance.gunShot);
         }
     }
 

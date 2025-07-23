@@ -1,6 +1,15 @@
 using UnityEngine;
 
+public enum SoundType
+{
+    ShotCommon,
+    ShotFire,
+    ShotIce,
+    ShotHole
+}
+
 public class AsteroidInfo : MonoBehaviour
 {
-    public int points = 1; // Personalizá para cada prefab en el inspector
+    public int points = 1;
+    public AudioClip impactSound;
 }

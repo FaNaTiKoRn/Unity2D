@@ -34,12 +34,16 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Asteroid"))
         {
-            // Buscar el componente AsteroidInfo para saber cuántos puntos vale
             AsteroidInfo info = other.GetComponent<AsteroidInfo>();
+
             if (info != null)
             {
+                // Sumar puntos
                 ScoreManager.Instance?.AddPoints(info.points);
                 Debug.Log("🎯 Sumó " + info.points + " puntos por " + other.name);
+
+                // Reproducir sonido de impacto asignado al prefab
+                SoundManager.Instance.PlaySound(info.impactSound);
             }
             else
             {
@@ -48,41 +52,6 @@ public class Projectile : MonoBehaviour
 
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
-        }
-    }
-
-
-    private void XOnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Asteroid"))
-        {
-            string cleanName = other.gameObject.name.Replace("(Clone)", "").Trim();
-
-            int puntos = 0;
-
-            if (cleanName.Contains("Pequeño"))
-                puntos = 1;
-            else if (cleanName.Contains("Mediano"))
-                puntos = 2;
-            else if (cleanName.Contains("Grande"))
-                puntos = 3;
-            else if (cleanName.Contains("Gigante"))
-                puntos = 5;
-
-            Debug.Log($"☄️ Proyectil impactó: {cleanName} | Puntos: {puntos}");
-
-            // Verificamos que ScoreManager exista
-            if (ScoreManager.Instance != null)
-            {
-                ScoreManager.Instance.AddPoints(puntos);
-            }
-            else
-            {
-                Debug.LogWarning("❌ ScoreManager.Instance es NULL. ¿Está en escena?");
-            }
-
-            other.gameObject.SetActive(false); // Desactiva asteroide
-            gameObject.SetActive(false);       // Desactiva proyectil
         }
     }
 }

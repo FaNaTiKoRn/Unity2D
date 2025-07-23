@@ -18,8 +18,11 @@ public class GameOverManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        if (isGameOver) return; // Evitar múltiples llamadas
+
         isGameOver = true;
         gameOverText.SetActive(true);
+
     }
 
     private void Update()

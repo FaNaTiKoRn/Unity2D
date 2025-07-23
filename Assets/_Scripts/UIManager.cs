@@ -22,7 +22,11 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameOver(bool show)
     {
-        if (gameOverText != null)
+        if (gameOverText != null) {
+
             gameOverText.gameObject.SetActive(show);
+            //SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
+            
+        }
     }
 }
