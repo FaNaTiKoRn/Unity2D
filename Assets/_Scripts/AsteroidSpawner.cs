@@ -75,4 +75,14 @@ public class AsteroidSpawner : MonoBehaviour
         spawnRate = newRate;
     }
 
+    public void IncreaseDifficulty(float multiplier)
+    {
+        speedRange.x *= multiplier;
+        speedRange.y *= multiplier;
+
+        spawnRate = Mathf.Max(spawnRate * (1f / multiplier), 0.2f); // No baja de 0.2 seg
+
+        Debug.Log("📈 Dificultad incrementada. Nueva spawnRate: " + spawnRate + ", Velocidad: " + speedRange);
+    }
+
 }

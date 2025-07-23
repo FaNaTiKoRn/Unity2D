@@ -50,7 +50,14 @@ public class LivesManager : MonoBehaviour
         if (isGameOver || currentLives <= 0) return;
 
         currentLives--;
-        lifeIcons[currentLives].SetActive(false);
+
+        // Sonido de colisión simple
+        SoundManager.Instance?.PlaySound(SoundManager.Instance.shipCollide);
+
+        if (currentLives >= 0 && currentLives < lifeIcons.Count)
+        {
+            lifeIcons[currentLives].SetActive(false);
+        }
 
         if (currentLives == 0)
         {
@@ -67,6 +74,10 @@ public class LivesManager : MonoBehaviour
 
         if (spawner != null)
             spawner.IncreaseSpawnSpeed(0.1f); // Asteroides más rápidos
+
+        // Sonidos de destrucción y fin del juego
+        SoundManager.Instance?.PlaySound(SoundManager.Instance.shipDestroy);
+        SoundManager.Instance?.PlaySound(SoundManager.Instance.gameOver);
 
         UIManager.Instance?.ShowGameOver(true); // Muestra el texto GAME OVER
     }

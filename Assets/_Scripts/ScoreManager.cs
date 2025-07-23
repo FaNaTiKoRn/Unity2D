@@ -22,8 +22,16 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Sumando puntos: " + amount + " | Total: " + score);
 
         UpdateUI();
-    }
 
+        // Aumentar dificultad: cada punto es un 1% más
+        AsteroidSpawner spawner = FindObjectOfType<AsteroidSpawner>();
+        if (spawner != null)
+        {
+            float difficultyMultiplier = 1f + (amount / 100f);  // ej. 3 puntos → x1.03
+            spawner.IncreaseDifficulty(difficultyMultiplier);
+            Debug.Log($"📈 Aumento de dificultad en {amount}% → x{difficultyMultiplier}");
+        }
+    }
 
     private void UpdateUI()
     {
@@ -36,5 +44,4 @@ public class ScoreManager : MonoBehaviour
             Debug.LogWarning("⚠️ ¡No se asignó el TextMeshProUGUI al ScoreManager!");
         }
     }
-
 }

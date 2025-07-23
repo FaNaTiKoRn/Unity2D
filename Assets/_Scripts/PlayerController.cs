@@ -82,9 +82,13 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Asteroid"))
         {
             Debug.Log("¡Colisión con asteroide!");
+
+            // 🔊 Reproducir sonido de colisión
+            SoundManager.Instance?.PlaySound(SoundManager.Instance.shipCollide);
+
             LivesManager.Instance?.LoseLife();
             other.gameObject.SetActive(false);
-            // No destruimos al jugador, solo le restamos vida
         }
     }
+
 }

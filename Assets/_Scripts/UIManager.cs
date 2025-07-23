@@ -20,13 +20,26 @@ public class UIManager : MonoBehaviour
         ShowGameOver(false); // Ocultar texto al inicio
     }
 
+    private void Update()
+    {
+        // Detectar Escape para salir en cualquier momento
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Escape presionado, cerrando juego...");
+            Application.Quit();
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        }
+    }
+
     public void ShowGameOver(bool show)
     {
-        if (gameOverText != null) {
-
+        if (gameOverText != null)
+        {
             gameOverText.gameObject.SetActive(show);
             //SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
-            
         }
     }
 }
