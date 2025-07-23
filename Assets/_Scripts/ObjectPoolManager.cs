@@ -16,6 +16,7 @@ public class ObjectPoolManager : MonoBehaviour
         AsteroidePequeño,
         AsteroideMediano,
         AsteroideGrande,
+        AsteroideGigante,
         Cometa
     }
 

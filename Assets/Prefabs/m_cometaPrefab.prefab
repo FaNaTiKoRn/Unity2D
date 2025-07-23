@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2877572069536310360}
   - component: {fileID: 5618893348644386062}
   - component: {fileID: 477802143459385710}
+  - component: {fileID: -6922816570072302363}
   m_Layer: 0
   m_Name: m_cometaPrefab
   m_TagString: Asteroid
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a86aab480b0612428cba9e9abc05d2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d0519c46b876b74dbe0d228e6509347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,3 +137,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &-6922816570072302363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901212321887307589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e535ef217e46a05458ad68ae254fb691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 1

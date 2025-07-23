@@ -38,7 +38,8 @@ public class AsteroidSpawner : MonoBehaviour
         ObjectPoolManager.PoolNames[] tipos = {
             ObjectPoolManager.PoolNames.AsteroidePequeño,
             ObjectPoolManager.PoolNames.AsteroideMediano,
-            ObjectPoolManager.PoolNames.AsteroideGrande
+            ObjectPoolManager.PoolNames.AsteroideGrande,
+            ObjectPoolManager.PoolNames.AsteroideGigante,
         };
 
         // Elige aleatoriamente un tipo de asteroide
