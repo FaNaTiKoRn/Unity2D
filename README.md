@@ -8,7 +8,7 @@
 
 ## 📝 Descripción
 
-Este juego fue desarrollado en Unity 2D como parte del proyecto final de la cursada. Se basa en una mecánica simple de movimiento con teclado (WASD) y disparo con la barra espaciadora (SPACE).  
+Este juego fue desarrollado en Unity 2D como parte del proyecto final de la cursada. Se basa en una mecánica simple de movimiento con teclado (WASD) y disparo con la barra espaciadora (SPACE), ESC para salir!  
 
 ### Contenido:
 - Música de fondo sin créditos requeridos.
